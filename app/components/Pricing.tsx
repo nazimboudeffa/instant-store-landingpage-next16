@@ -31,7 +31,11 @@ export function Pricing() {
           {PLANS.map((p) => (
             <div
               key={p.name}
-              className={`card fade-up flex flex-col ${p.highlighted ? "ring-2 ring-indigo-500 shadow-glow" : ""}`}
+              className={`relative overflow-hidden rounded-xl p-6 shadow-sm flex flex-col ${
+                p.highlighted 
+                  ? "ring-2 ring-indigo-500 shadow-glow bg-linear-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 border border-zinc-200 dark:border-zinc-800" 
+                  : "card fade-up"
+              }`}
             >
               <div className="mb-2 text-sm font-semibold tracking-wide text-indigo-600 dark:text-indigo-300">
                 {p.tagline}
@@ -50,7 +54,7 @@ export function Pricing() {
                 href={p.href}
                 target={p.href.startsWith("http") ? "_blank" : undefined}
                 rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`mt-auto text-sm font-medium rounded-full px-5 py-3 text-center transition ${p.highlighted ? "bg-indigo-600 hover:bg-indigo-700 text-white" : "bg-white dark:bg-zinc-900 border border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-800"}`}
+                className={`mt-auto text-sm font-medium rounded-full px-5 py-3 text-center transition ${p.highlighted ? "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-lg" : "bg-white dark:bg-zinc-900 border border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-800"}`}
               >
                 {p.cta}
               </a>
