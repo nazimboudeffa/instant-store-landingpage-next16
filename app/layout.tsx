@@ -53,12 +53,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <PlausibleProvider domain="instant-store.com" customDomain="https://plausible.codewithadu.de" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PlausibleProvider domain="instant-store.com">
-          {children}
-        </PlausibleProvider>
+        {children}
       </body>
     </html>
   );
